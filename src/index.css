@@ -125,13 +125,10 @@
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 1,
-    'wght' 700,
-    'GRAD' 200,
-    'opsz' 48;
-  font-size: 16px;
-  color: var(--Red);
+  background-color: var(--Red);
+  width:8px;
+  height:8px;
+  border-radius:50px;
 }
 
 .maine {
@@ -212,7 +209,8 @@
   }
 
   .material-symbols-outlined {
-    font-size: 12px;
+    width: 6px;
+    height:6px;
   }
 
   .messene {
