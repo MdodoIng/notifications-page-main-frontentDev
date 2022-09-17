@@ -24,7 +24,6 @@ function App() {
                     <p>{item.name}
                       <span style={item.do ? { display: 'inline-block' } : { display: 'none' }}>{item.do}</span> <b style={item.who ? { display: 'inline-block' } : { display: 'none' }}>{item.who}</b>
                       <i style={!item.read ? { display: 'inline-block' } : { display: 'none' }} class="material-symbols-outlined">
-                        fiber_manual_record
                       </i>
 
                     </p>
