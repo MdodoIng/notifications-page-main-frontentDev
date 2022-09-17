@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { notificationDeities } from './contract/contract';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <section className='section'>
+        <div className='notificationTitle'>
+          <h4>
+            Notifications <span>3</span>
+          </h4>
+          <p>Mark all as read</p>
+        </div>
+        <div className='grid'>
+          {notificationDeities.map((item) => (
+
+            <div key={item.id} className='content'>
+              <div style={item.read ? { backgroundColor: 'white' } : { backgroundColor: '' }} className='maine'>
+                <div className='information'>
+                  <div className='content_profile'>
+
+                    <img src={item.user} alt="" />
+                  </div>
+                  < div className='foods'>
+                    <p>{item.name}
+                      <span style={item.do ? { display: 'inline-block' } : { display: 'none' }}>{item.do}</span> <b style={item.who ? { display: 'inline-block' } : { display: 'none' }}>{item.who}</b>
+                      <i style={!item.read ? { display: 'inline-block' } : { display: 'none' }} class="material-symbols-outlined">
+                        fiber_manual_record
+                      </i>
+
+                    </p>
+                    <small>{item.time}</small>
+                  </div>
+                </div>
+                <div style={item.commented ? { display: 'inline-block' } : { display: 'none' }} className='content_profile'>
+                  <img src={item.commented} alt="" />
+                </div>
+              </div>
+              <div style={item.messene ? { display: 'inline-block' } : { display: 'none' }} className='messene'>
+                <p>{item.messene}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }
